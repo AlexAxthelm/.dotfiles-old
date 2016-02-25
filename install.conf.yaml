@@ -4,5 +4,7 @@
     ~/.vim: vim/
     ~/.vimrc: vimrc
 - shell:
-  - [git submodule update --init --recursive, Installing submodules]
-  - [vim +PluginInstall +qall]
+  - git submodule update --init --recursive, Installing submodules
+  - git clone "https://github.com/VundleVim/Vundle.vim.git" ~/.vim/bundle/Vundle.vim
+  - pip install --user powerline-status
+  - vim +PluginInstall +qall
