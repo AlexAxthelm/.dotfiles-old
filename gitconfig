@@ -1,0 +1,31 @@
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
+[user]
+	name = Alex Axthelm
+	email = Alexander.Axthelm@maine.edu
+[core]
+	excludesfile = /Users/alex/.gitignore_global
+	autocrlf = input
+[color]
+	ui = true
+[push]
+	default = current
+[pull]
+	rebase = true
+[alias]
+	s = status -s
+	lg = 	log --oneline --decorate --all --graph
+  	sync = 	"! git fetch $1 -q ; \
+    		echo "Fetch Okay"; \
+    		git merge $1/iMac --ff-only; \
+		echo "Merge Okay"; \
+    		git push $1 --all -q ; \
+		echo "Push Okay" \
+  		"
+[branch]
+	autosetuprebase = always
+[rerere]
+	enabled = true
+[diff]
+	tool = vimdiff

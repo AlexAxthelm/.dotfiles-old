@@ -1,8 +1,21 @@
 - clean: ['~']
 - link:
     ~/.tmux.conf: tmux.conf
-    ~/.vim: vim/
-    ~/.vimrc: vimrc
+    ~/.vim:
+      path: vim/
+      create: true
+    ~/.vimrc:
+      path: vimrc
+      force: true
+    ~/.gitconfig:
+      path: gitconfig
+      force: true
+    ~/.gitignore_global:
+      path: gitignore_global
+      force: true
+    ~/.zshrc:
+      path: zshrc
+      force: true
 - shell:
   - git submodule update --init --recursive, Installing submodules
   - git clone "https://github.com/VundleVim/Vundle.vim.git" ~/.vim/bundle/Vundle.vim
